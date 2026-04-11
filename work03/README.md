@@ -3,7 +3,7 @@
 ---
 
 ## 项目介绍
-本项目基于 **Python + Taichi** 实现参数曲线的交互式绘制与渲染，包括：**贝塞尔曲线、De Casteljau 算法、GPU 加速光栅化、反走样（抗锯齿）、均匀三次 B 样条曲线**。
+本项目基于 **Python + Taichi** 实现参数曲线的交互式绘制与渲染，包括：**贝塞尔曲线、De Casteljau 算法、GPU 加速光栅化、返走样（抗锯齿）、均匀三次 B 样条曲线**。
 
 通过本实验，深入理解参数曲线的几何意义、生成算法、光栅化原理、GPU 渲染流程以及交互系统实现。
 
@@ -25,7 +25,7 @@
 - CPU 批量计算 → 一次性传输 GPU
 - 高性能渲染（1000 采样点）
 
-### 3. 反走样（抗锯齿）
+### 3. 返走样（抗锯齿）
 - 3×3 邻域加权渲染
 - 保留亚像素精度
 - 高斯距离衰减权重
@@ -43,8 +43,10 @@
 ## 文件结构
 ```
 work03/
-├── bezier_curve.py                # 基础版：贝塞尔曲线 + GPU 渲染
-├── bezier_bspline_antialiasing.py # 完整版：贝塞尔 + B样条 + 反走样
+├── bezier_curve.py                # 贝塞尔曲线 + GPU 渲染
+├── bezier_bspline_antialiasing.py # 贝塞尔 + B样条 + 返走样
+├── demo_1.gif                     # 贝塞尔曲线 + GPU 渲染演示视频
+├── demo_2.gif                     # 贝塞尔 + B样条 + 返走样演示视频
 └── README.md                      # 作业说明文档
 ```
 
@@ -60,12 +62,10 @@ work03/
 pip install taichi numpy
 ```
 
-运行基础版：
+终端运行：
 ```bash
 python bezier_curve.py
 ```
-
-运行完整版：
 ```bash
 python bezier_bspline_antialiasing.py
 ```
@@ -82,9 +82,8 @@ python bezier_bspline_antialiasing.py
 ---
 
 ## 运行效果
-![演示动图](demo_1.gif)
-![演示动图](demo_2.gif)
-
+![演示动图](https://github.com/Cm0www/BNUCG2026_work/blob/main/work03/demo_1.gif)
+![演示动图](https://github.com/Cm0www/BNUCG2026_work/blob/main/work03/demo_2.gif)
 ---
 
 ## 实现原理
@@ -92,7 +91,7 @@ python bezier_bspline_antialiasing.py
 通过递归线性插值，从控制点序列逐层插值，最终得到曲线上的点。
 核心公式：
 ```
-P' = (1 - t) * P0 + t * P1
+P0' = (1 - t) * P0 + t * P1
 ```
 
 ### 2. 均匀三次 B 样条
@@ -106,7 +105,7 @@ M = [
 ] / 6.0
 ```
 
-### 3. 反走样原理
+### 3. 返走样原理
 对浮点坐标附近 3×3 像素根据距离分配权重，距离越近权重越大，实现平滑边缘。
 
 ---
@@ -119,6 +118,6 @@ M = [
 - Taichi 并行内核编写
 - 参数曲线交互系统实现
 - B 样条局部控制特性
-- 反走样（抗锯齿）基本思想
+- 返走样（抗锯齿）基本思想
 
 ---
