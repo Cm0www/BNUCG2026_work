@@ -115,8 +115,8 @@ python3 mass_spring.py --headless --steps 240 --method implicit
 
 下图展示阻尼系数为 `1.0` 和 `5.0` 时的运行效果。阻尼较小时，布料在下落后会持续摆动；阻尼增大后，振动衰减更快，布料更快趋于稳定。
 
-![基础部分：阻尼 1.0 ](assets/demo_basic(1.0).gif)
-![基础部分：阻尼 5.0 ](assets/demo_basic(5.0).gif)
+![基础部分：阻尼 1.0 ](assets/demo_basic（1.0）.gif)
+![基础部分：阻尼 5.0 ](assets/demo_basic（5.0）.gif)
 
 ### 6.2 选做部分：弹簧模型完善与球体碰撞
 
