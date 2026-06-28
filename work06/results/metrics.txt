@@ -1,0 +1,10 @@
+Experiment: Differentiable Rendering - Cow Silhouette Fitting
+Device: cuda:0
+Target model: cow.obj
+Views: 4
+Image size: 128 x 128
+Iterations: 300
+Optimizer: Adam(lr=0.08)
+Weights: W_LAP=0.02, W_EDGE=0.005, W_NORMAL=0.002
+Final total loss: 0.00446548
+Final silhouette MSE: 0.00238841
