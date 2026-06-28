@@ -1,0 +1,20 @@
+SMPL Linear Blend Skinning Experiment Summary
+==========================================================
+Vertex count: 6890
+Face count: 13776
+Kinematic joint count: 24
+Betas dimension: 10
+LBS weights shape: (6890, 24)
+Shape dirs shape: (6890, 3, 10)
+Pose dirs shape: (207, 20670)
+
+Manual LBS vs official SMPL forward (same betas/global_orient/body_pose):
+Vertex mean absolute error: 0.0000000000e+00
+Vertex max absolute error : 0.0000000000e+00
+Joint mean absolute error : 0.0000000000e+00
+Joint max absolute error  : 0.0000000000e+00
+
+Conclusion:
+The hand-written pipeline follows shape blend shapes, joint regression,
+pose blend shapes, forward kinematics, and weighted LBS in sequence.
+Small floating-point error is expected; a max error below 1e-5 indicates consistency.

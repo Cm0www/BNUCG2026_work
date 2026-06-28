@@ -1,0 +1,6 @@
+# 建议在独立虚拟环境中安装
+numpy>=1.26
+matplotlib>=3.8
+torch>=2.2
+smplx>=0.1.28
+imageio>=2.34

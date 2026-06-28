@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# macOS
+.DS_Store
+
+# SMPL model files: do not upload licensed model assets
+assets/models/*.pkl
+assets/models/*.npz
+assets/models/*.npy
