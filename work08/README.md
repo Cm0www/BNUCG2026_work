@@ -17,7 +17,7 @@
 work08/
 ├── assets/
 │   └── models/
-│       └── SMPL_NEUTRAL.pkl        # 本地放入；受模型许可约束，不提交 Git
+│       └── SMPL_NEUTRAL.pkl        
 ├── outputs/                        # 运行 main.py 后自动生成
 │   ├── stage_a_template_weights.png
 │   ├── all_joint_weights.png
@@ -211,10 +211,3 @@ outputs/optional_pose_animation.gif
 2. **为什么顶点要对多个关节变换加权，而不是只选最大权重关节？**
    对多个关节加权可以使交界区域连续过渡，避免硬切换导致的裂缝和明显折痕。这正是 Linear Blend Skinning 中“Blend”的含义。
 
-## 9. 运行后需要提交的内容
-
-提交 Git 仓库中的 `work08` 文件夹。应包含：
-
-- `main.py`、`requirements.txt`、`.gitignore`、`README.md`；
-- `outputs/` 中运行生成的 6 张 PNG、`summary.txt` 和选做 GIF；
-- 不包含 `SMPL_NEUTRAL.pkl`，因为模型文件受许可限制且已通过 `.gitignore` 排除。
