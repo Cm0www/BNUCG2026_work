@@ -4,7 +4,6 @@
 
 本项目使用 **Taichi** 实现 Whitted-Style 光线追踪器。程序采用适配 GPU 并行计算的**迭代式**光线弹射逻辑，不使用递归；每个像素独立追踪主光线及其后续反射/折射光线。
 
-已完成必做内容与两项选做内容：玻璃材质折射、MSAA 抗锯齿。
 
 ## 二、已完成功能
 
@@ -88,11 +87,6 @@ python main.py
 
 程序会打开交互窗口。右上角 `Controls` 面板中可直接拖动光源位置、修改最大弹射次数，并启用玻璃球与 MSAA。
 
-如 Mac 上无法正常调用 GPU，可强制使用 CPU：
-
-```bash
-python main.py --cpu
-```
 
 启动时直接进入选做效果（玻璃球、4 倍 MSAA、5 次弹射）：
 
@@ -100,16 +94,12 @@ python main.py --cpu
 python main.py --glass --spp 4 --max-bounces 5
 ```
 
-本程序**不会自动生成 PNG**。实验效果使用系统录屏录制后，再转换为 GIF 提交。
-
 ## 六、GIF 录制内容
 
-建议录制两个 GIF，保存到 `outputs/` 文件夹：
 
 1. `required_demo.gif`：保持 `Glass sphere` 未勾选、`MSAA samples = 1`。拖动 `Light X` 或 `Light Z`，展示硬阴影实时移动；再修改 `Max Bounces`，展示镜面反射效果。
 2. `optional_glass_msaa.gif`：勾选 `Glass sphere`，将 `MSAA samples` 调为 `4` 或 `8`，并将 `Max Bounces` 调为 `5`，展示玻璃折射与抗锯齿效果。
 
-录制完成后，将 GIF 放进 `outputs/`，README 会自动显示：
 
 ### 必做效果
 
@@ -123,12 +113,12 @@ python main.py --glass --spp 4 --max-bounces 5
 
 ```text
 work05/
-├── main.py                     # 光线追踪主程序，仅实时显示，不导出 PNG
-├── requirements.txt            # Python 依赖
-├── README.md                   # 实验说明与 GIF 提交说明
-├── .gitignore                  # Git 忽略规则
+├── main.py                     
+├── requirements.txt            
+├── README.md                   
+├── .gitignore                  
 └── outputs/
-    ├── .gitkeep                # 保留输出目录
-    ├── required_demo.gif       # 录制后的必做演示 GIF（自行添加）
-    └── optional_glass_msaa.gif # 录制后的选做演示 GIF（自行添加）
+    ├── .gitkeep                
+    ├── required_demo.gif       
+    └── optional_glass_msaa.gif 
 ```
