@@ -1,4 +1,6 @@
-# work08：基于 SMPL 的 Linear Blend Skinning（LBS）可视化
+# 基于 SMPL 的 Linear Blend Skinning（LBS）可视化
+
+学号：202411081076 姓名：陈梦灵 专业：计算机科学与技术
 
 ## 1. 实验目标
 
